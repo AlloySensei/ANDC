@@ -1,0 +1,520 @@
+@import 'typed';
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* Dark mode background color */
+    color: #fff; /* Text color */
+    margin: 0;
+}
+/*<---------Nav Bar-------->*/
+.container {
+    margin: 30 auto;
+    padding-left: 2%;
+    padding-right: 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+a{
+    text-decoration: none;
+    display:table;
+}
+
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    font-size: 20px;
+}
+
+.nav-links li {
+    margin-right: 20px;
+
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.content {
+    padding-top: 20px;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.comment{
+    color: green;
+}
+
+.logo .logo-title {
+    font-size: 24px;
+    color: #fff;
+    display:table-cell;
+    vertical-align:middle;
+}
+
+.logo .logo-svg path {
+    transition: fill 0.3s ease;
+}
+
+.logo:hover .logo-svg path {
+    fill: #7e7ec9; 
+}
+
+.nav-links li a:hover {
+    color: #7e7ec9; /* Change hover color */
+}
+
+/*<---------Home Page-------->*/
+.line-1{
+    position: relative;
+    top: 50%;  
+    width: 18em;
+    margin: 0 auto;
+    border-right: 2px solid rgba(255,255,255,.75);
+    font-size: 180%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);    
+}
+
+.anim-typewriter{
+  animation: typewriter 2s steps(36) .5s 1 normal both,
+             blinkTextCursor 500ms steps(36) infinite normal;
+}
+
+@keyframes typewriter{
+  from{width: 0;}
+  to{width: 18em;}
+}
+@keyframes blinkTextCursor{
+  from{border-right-color: rgba(255,255,255,.75);}
+  to{border-right-color: transparent;}
+}
+
+.container-content h2{
+    color: #7e7ec9; /* Title color */
+    margin-bottom: 0.5em; /* Adjust space between title and content */
+}
+
+.container-content p{
+    font-size: 1.25em;
+}
+
+.container-content {
+    display: flex;
+    margin-top: 3em;
+    justify-content: center;
+    flex-wrap: wrap; /* Ensures that if content overflows, it wraps properly */
+}
+
+.content-home,
+.content-1, .content-2 {
+    margin-top: 2em;
+    max-width: 400px;
+    width: 300px;
+    height: auto;
+    padding: 1em;
+    background-color: #1f1f1f;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 10px; /* Optional margin between the content blocks */
+}
+
+.content-1 h2{
+    text-align: center;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+    gap: 1em; /* Adjust space between skill boxes */
+}
+
+.skill-box {
+    background-color: #333; /* Box background color */
+    border-radius: 8px; /* Rounded corners */
+    padding: 1em; /* Padding inside the box */
+    text-align: center; /* Center the content */
+}
+
+.skill-box img {
+    width: 50px; /* Adjust icon size */
+    height: 50px;
+    margin-bottom: 0.5em; /* Adjust space between icon and text */
+}
+
+.skill-box p {
+    color: #fff; /* Text color */
+    font-size: 0.9em; /* Adjust text size */
+    margin: 0; /* Remove default margins */
+}
+
+
+.content-home p {
+    font-size: 1.1em; /* Adjust paragraph font size */
+    line-height: 1.6; /* Adjust line height for better readability */
+}
+
+.skills {
+    list-style: none;
+    padding: 0;
+}
+
+.skills li {
+    margin-bottom: 0.5em; /* Adjust space between skills */
+    position: relative;
+}
+
+
+.skills img {
+    width: 30px; /* Adjust skill icon size */
+    height: 30px;
+    text-align: center;
+    margin-right: 0.5em; /* Adjust space between icon and text */
+    
+}
+
+
+.goals {
+    list-style-type: none;
+    padding: 0;
+}
+
+.goals li {
+    margin-bottom: 0.5em; /* Adjust space between goals */
+    position: relative;
+    padding-left: 20px; /* Add space for bullet point */
+}
+
+.goals li::before {
+    content: "•"; /* Bullet point */
+    color: #7e7ec9; /* Bullet point color */
+    position: absolute;
+    left: 0;
+}
+
+.gallery-section {
+    text-align: center;
+    padding: 50px 20px; /* Adjust padding as needed */
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px; /* Adjust gap between photos */
+}
+
+.gallery img {
+    width: 100%; /* Ensure photos span the whole width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Optional: Add rounded corners */
+    overflow: hidden; /* Hide excess parts */
+    transition: transform 0.3s ease; /* Smooth zoom transition */
+}
+
+.gallery img:hover {
+    transform: scale(1.1); /* Zoom effect on hover */
+}
+
+.modal {
+    display: none; /* Hide modal by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    margin: auto;
+    margin-top: 5%;
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+    align-items: center;
+}
+
+.close {
+    color: #fff;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/*<---------PUP HYMN-------->*/
+header {
+    display: flex;
+    align-items: center;
+    font-family: Cinzel, Arial, sans-serif;
+    padding: 10px;
+  }
+
+.logo img {
+    width: 70px;
+    height: auto;
+    max-width: 100%;
+}
+
+.logo-text {
+    display: flex;
+    margin-left: 10px;
+    flex-direction: column;
+}
+
+.logo-text h1 {
+    margin: 0;
+    color:#fff;
+    font-size: 18px;
+}
+
+.logo-text p {
+    margin: 0;
+    font-size: 14px;
+    opacity: 80%;
+}
+
+.content-hymn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+
+.lyrics-container {
+    background-color: #1f1f1f;
+    border-radius: 8px;
+    padding-left: 20px;
+    width: 400px;
+    overflow-y: auto;
+    max-height: 400px;
+    margin-bottom: 20px;
+    color: #fff;
+    scrollbar-width: thin; 
+    scrollbar-color: transparent transparent; 
+    position: relative;
+}
+
+.border{
+border-radius: 8px;
+background-color: #1f1f1f;
+margin-left: 10%;
+margin-right: 10%;
+}
+
+.lyrics-line {
+margin-bottom: 10px;
+font-weight: bold;
+opacity: .7;
+white-space: pre-wrap;
+}
+
+.passed {
+color: #fff;
+opacity: 1;
+}
+
+.current {
+color: #fff;
+opacity: 1;
+font-weight: bold;
+}
+
+.footer {
+width: 100%;
+height: 50px;
+border-bottom-left-radius: 8px;
+border-bottom-right-radius: 8px;
+background-color: #820908;
+color: rgb(211, 211, 211);
+text-align: center;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.title {
+color: #fff; 
+font-size: 24px;
+font-weight: bold;
+margin-bottom: 10px;
+}
+
+.social-section {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 10em;
+}
+
+.social-icons {
+    margin-top: 20px;
+}
+
+
+.social-icons a {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.social-icons img {
+    width: 40px; /* Adjust icon size as needed */
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1);
+}
+
+/*<---------About Me-------->*/
+
+.about-section {
+    display: flex;
+    flex-wrap: wrap; /* Allow flex items to wrap */
+    justify-content: space-between; /* Distribute space between flex items */
+    margin: 30px auto;
+    max-width: 1200px; /* Adjust max-width as needed */
+    padding: 20px;
+}
+
+.block-1 {
+    flex: 0 0 60%; /* Take up 60% of the available space */
+}
+
+.block-2 {
+    flex: 0 0 35%; /* Take up 35% of the available space */
+}
+
+.personal-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.personal-info h3 {
+    color: #7e7ec9;
+}
+
+.bio,
+.photo {
+    width: 100%; /* Adjusted width to fit block-1 */
+    max-width: 500px; /* Set a maximum width for bio and photo */
+}
+
+.bio{
+    margin-right: 1.25em;
+        text-align: justify;
+    margin-right: 1.25em;
+    line-height: 1.6; /* Adjust line height for better readability */
+}
+
+.photo img {
+    width: 100%; /* Make the image responsive */
+    max-width: 100%; /* Ensure the image doesn't exceed its container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px;
+}
+
+.hobbies-gaming {
+    display: flex;
+    justify-content:center;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.hobbies-gaming h3 {
+    color: #7e7ec9;
+}
+
+.hobbies,
+.gaming-igns {
+    flex: 1;
+    background-color: #1f1f1f;
+    border-radius: 8px;
+}
+
+.hobbies {
+    flex: 0 0 65%;
+    background-color: #1f1f1f;
+    border-radius: 8px;
+    padding-left: 1em;
+    padding-bottom: 1em;
+    margin-right: 10px;
+    margin-left: -10px;
+}
+
+.hobbies-content {
+    text-align: justify;
+    margin-right: 1.25em;
+    line-height: 1.6; /* Adjust line height for better readability */
+}
+
+.hobbies-content p {
+    margin-bottom: 1em; /* Add space between paragraphs */
+}
+
+.gaming-igns {
+    flex: 0 0 35%;
+    background-color: #1f1f1f;
+    height: auto;
+    border-radius: 8px;
+    padding-left: 1em;
+    padding-bottom: 1em;
+    
+}
+.gaming-igns img {
+    margin-right: 5px;
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+}
+
+
+.poems {
+    flex: 1; /* Take up remaining space in block-2 */
+    height: 88%;
+    background-color: #1f1f1f;
+    border-radius: 8px;
+    padding: 1.25em;
+    margin: 0;
+}
+
+.poems h3 {
+    color: #7e7ec9;
+    margin: 0;
+}
+
+.poems .poem h4 {
+    color: #7e7ec9;
+    margin-bottom: 5px;
+}
+
+.poems .poem p {
+    margin: 0;
+}
+
+
