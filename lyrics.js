@@ -29,6 +29,7 @@ const lyrics = [
   });
 
   const audio = document.getElementById('audio');
+  audio.volume = 0.3;
 
   audio.addEventListener('timeupdate', () => {
     const currentTime = audio.currentTime;
