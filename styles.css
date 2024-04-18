@@ -10,6 +10,7 @@ body {
     margin: 30 auto;
     padding-left: 2%;
     padding-right: 2%;
+    margin-bottom: 1em;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -44,7 +45,6 @@ a{
 }
 
 .content {
-    padding-top: 20px;
     margin-left: 2%;
     margin-right: 2%;
 }
@@ -73,31 +73,46 @@ a{
 }
 
 /*<---------Home Page-------->*/
-.line-1{
+.line-1 {
     position: relative;
-    top: 50%;  
-    width: 18em;
+    top: 50%;
+    width: 80%;
     margin: 0 auto;
-    border-right: 2px solid rgba(255,255,255,.75);
+    border-right: 2px solid rgba(255, 255, 255, 0.75);
     font-size: 180%;
     text-align: center;
     white-space: nowrap;
     overflow: hidden;
-    transform: translateY(-50%);    
 }
 
-.anim-typewriter{
-  animation: typewriter 2s steps(36) .5s 1 normal both,
-             blinkTextCursor 500ms steps(36) infinite normal;
+.anim-typewriter {
+    animation: typewriter 2s steps(36) 0.5s 1 normal both, blinkTextCursor 500ms steps(36) infinite normal;
 }
 
-@keyframes typewriter{
-  from{width: 0;}
-  to{width: 18em;}
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+    to {
+        width: 18em;
+    }
 }
-@keyframes blinkTextCursor{
-  from{border-right-color: rgba(255,255,255,.75);}
-  to{border-right-color: transparent;}
+@keyframes blinkTextCursor {
+    from {
+        border-right-color: rgba(255, 255, 255, 0.75);
+    }
+    to {
+        border-right-color: transparent;
+    }
+}
+
+/* Media Query for Small Screens */
+@media only screen and (max-width: 768px) {
+    .line-1 {
+        font-size: 120%; /* Adjust font size for smaller screens */
+        width: 100%; /* Make it take full width on smaller screens */
+        border-right: none; /* Remove border for smaller screens */
+    }
 }
 
 .container-content h2{
@@ -108,7 +123,7 @@ a{
 
 .container-content {
     display: flex;
-    margin-top: 3em;
+    margin-top: 1em;
     justify-content: center;
     flex-wrap: wrap; 
 }
@@ -521,7 +536,7 @@ margin-bottom: 10px;
     }
     .block-1,
     .block-2 {
-        grid-column: span 8; /* Each block spans the full width */
+        grid-column: span 9; /* Each block spans the full width */
     }
 
     .hobbies,
@@ -535,7 +550,6 @@ margin-bottom: 10px;
         grid-template-areas:
         "i i i i i"
         "b b b b b"
-        
         ;
     }
     .bio{
