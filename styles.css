@@ -388,24 +388,29 @@ margin-bottom: 10px;
 /*<---------About Me-------->*/
 
 .about-section {
-    display: flex;
+    display: grid;
+    gap: 2em;
+    grid-template-columns: repeat(9, 1fr);
     flex-wrap: wrap;
     justify-content: space-between; 
-    margin: 30px auto;
-    max-width: 1200px; 
+    margin: 3em auto 0;
+    width: 100%;
+    max-width: 80%; 
     padding: 20px;
 }
 
 .block-1 {
-    flex: 0 0 60%; 
+    grid-column: span 6;
 }
 
 .block-2 {
-    flex: 0 0 35%; 
+    grid-column: span 3;
 }
 
 .personal-info {
-    display: flex;
+    display: grid;
+    gap: 1em;
+    grid-template-columns: repeat(5, 1fr);
     justify-content: space-between;
     margin-bottom: 30px;
 }
@@ -414,10 +419,12 @@ margin-bottom: 10px;
     color: #7e7ec9;
 }
 
-.bio,
+.bio{
+    grid-column: span 3;
+}
 .photo {
+    grid-column: span 2;
     width: 100%; 
-    max-width: 500px; 
 }
 
 .bio{
@@ -435,10 +442,12 @@ margin-bottom: 10px;
 }
 
 .hobbies-gaming {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1em;
     justify-content:center;
     text-align: left;
-    margin-bottom: 30px;
+    margin-bottom: 1em;
 }
 
 .hobbies-gaming h3 {
@@ -453,18 +462,15 @@ margin-bottom: 10px;
 }
 
 .hobbies {
-    flex: 0 0 65%;
     background-color: #1f1f1f;
+    grid-column: span 3;
     border-radius: 8px;
-    padding-left: 1em;
+    padding: 1em;
     padding-bottom: 1em;
-    margin-right: 10px;
-    margin-left: -10px;
 }
 
 .hobbies-content {
     text-align: justify;
-    margin-right: 1.25em;
     line-height: 1.6;
 }
 
@@ -472,10 +478,10 @@ margin-bottom: 10px;
     margin-bottom: 1em;
 }
 
-.gaming-igns {
-    flex: 0 0 35%;
+.gaming-igns { 
     background-color: #1f1f1f;
     height: auto;
+    grid-column: span 2;
     border-radius: 8px;
     padding-left: 1em;
     padding-bottom: 1em;
@@ -490,12 +496,9 @@ margin-bottom: 10px;
 
 
 .poems {
-    flex: 1;
-    height: 88%;
     background-color: #1f1f1f;
     border-radius: 8px;
     padding: 1.25em;
-    margin: 0;
 }
 
 .poems h3 {
@@ -511,5 +514,37 @@ margin-bottom: 10px;
 .poems .poem p {
     margin: 0;
 }
+
+@media (max-width: 1200px) {
+    .poems, .gaming-igns {
+        text-align: center;
+    }
+    .block-1,
+    .block-2 {
+        grid-column: span 8; /* Each block spans the full width */
+    }
+
+    .hobbies,
+    .gaming-igns {
+        grid-column: span 5;
+    }
+}
+
+@media (max-width: 905px) {
+    .personal-info{
+        grid-template-areas:
+        "i i i i i"
+        "b b b b b"
+        
+        ;
+    }
+    .bio{
+        grid-area: b;
+    }
+    .photo{
+        grid-area: i;
+    }
+}
+
 
 
